@@ -1,10 +1,13 @@
 const express = require('express');
 require('dotenv').config();
+const cors = require('cors')
 const jwt = require('jsonwebtoken');
 
 const PORT = 5173;
 const secretKey = process.env.SECRET_KEY;
 const app = express();
+
+app.use(cors())
 
 // Connect to MongoDB database
 const mongoose = require('mongoose');
