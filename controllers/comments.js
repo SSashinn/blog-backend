@@ -4,7 +4,7 @@ const {body, validationResult} = require('express-validator');
 
 exports.comments_get = asyncHandler(async (req,res) => {
     const comments = await Comments.find({post: req.params.postid}).exec();
-    res.json(comments);
+    res.json({comments});
 });
 
 exports.comments_post = [
